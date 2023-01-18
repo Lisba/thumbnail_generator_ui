@@ -1,4 +1,5 @@
 {
   "HELP_TEXT": "Drag and Drop an image",
-  "SEND_IMAGE_BUTTON": "Generate thumbnail"
+  "SEND_IMAGE_BUTTON": "Generate thumbnail",
+  "THUMBNAIL_CREATED_SUCCESSFULLY": "Your thumnbnail is ready! 🥳 Here is your URL to use it anywhere!"
 }

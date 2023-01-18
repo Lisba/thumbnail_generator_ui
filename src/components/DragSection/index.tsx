@@ -42,7 +42,7 @@ function DragSection({ setImageToSend }) {
 
       {imageSelected ? (
         <div className='preview'>
-          <img src={`${imageSelected}`} alt='preview image' height='250px' width='250px' />
+          <img className='preview-image' src={`${imageSelected}`} alt='preview image' />
         </div>
       ) : null}
     </StyleDragSection>

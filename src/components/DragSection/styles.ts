@@ -23,12 +23,18 @@ const StyleDragSection = styled.div`
   }
   .help-text-container {
     padding: 1rem;
+    display: flex;
+    justify-content: center;
   }
   .preview {
     margin-bottom: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .preview-image {
+    max-width: 20rem;
+    height: auto;
   }
 `;
 
