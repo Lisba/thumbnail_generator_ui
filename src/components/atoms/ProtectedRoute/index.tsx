@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 interface IProps {
-  children?: React.ReactNode;
+  children?: React.ReactElement<any, any>;
   redirectTo?: string;
 }
 

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 import { useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import StyledDiv from './styles';
