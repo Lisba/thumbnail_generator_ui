@@ -5,6 +5,7 @@ const StyleDragSection = styled.div`
     border: 4px dashed #d0d7de;
     position: relative;
     margin-bottom: 2em;
+    color: var(--button-main-border-hover-color);
   }
   .image-upload-container:hover {
     background-color: transparent;

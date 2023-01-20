@@ -1,11 +1,17 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import StyledDiv from './styles';
 
-const NotFound = () => (
-  <div>
-    <h1>404 - Not Found!</h1>
-    <Link to='/'>Go Home</Link>
-  </div>
-);
+const NotFound = () => {
+  const { t } = useTranslation('notFound');
+  return (
+    <StyledDiv>
+      <h1 className='title'>{t('NOT_FOUND_TEXT')}</h1>
+      <Link className='link' to='/'>
+        {t('GO_HOME')}
+      </Link>
+    </StyledDiv>
+  );
+};
 
 export default NotFound;

@@ -1,0 +1,15 @@
+{
+  "roots": ["<rootDir>/src"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+  "testMatch": ["**/?(*.)test.ts?(x)"],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|gif)$": "identity-obj-proxy"
+  },
+  "testEnvironment": "jsdom",
+  "verbose": true,
+  "collectCoverage": true
+}

@@ -6,15 +6,22 @@
   background: -moz-linear-gradient(180deg, rgba(26, 31, 40, 1) 0%, rgba(46, 61, 67, 1) 41%);
   background: -webkit-linear-gradient(180deg, rgba(26, 31, 40, 1) 0%, rgba(46, 61, 67, 1) 41%);
   background: linear-gradient(180deg, rgba(26, 31, 40, 1) 0%, rgba(46, 61, 67, 1) 41%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1f28",endColorstr="#2e3d43",GradientType=1);
 
-  color: rgba(255, 255, 255, 0.87);
+  --primary-color: #ffffff;
+  --secondary-color: #0cf4e3;
+  --button-main-border-color: rgba(12, 244, 227, 0.5);
+  --button-main-border-hover-color: rgba(12, 244, 227, 1);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  place-items: center;
-  min-height: 100vh;
+  align-items: center;
 }

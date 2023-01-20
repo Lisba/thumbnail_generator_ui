@@ -7,12 +7,20 @@ interface IButton {
   name?: string;
   variant?: 'text' | 'outlined' | 'contained' | undefined;
   type?: 'submit' | undefined;
+  sx?: object;
 }
 
-function CustomButton({ name, disabled, type, variant, text, onClick }: IButton) {
+function CustomButton({ name, disabled, type, variant, text, onClick, sx }: IButton) {
   return (
     <>
-      <Button name={name} type={type} variant={variant} disabled={disabled} onClick={onClick}>
+      <Button
+        sx={sx}
+        name={name}
+        type={type}
+        variant={variant}
+        disabled={disabled}
+        onClick={onClick}
+      >
         {text}
       </Button>
     </>

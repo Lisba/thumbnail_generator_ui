@@ -1,10 +1,13 @@
-import * as React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-export default function CircularIndeterminate() {
+interface IButton {
+  sx?: object;
+}
+
+export default function CircularIndeterminate({ sx }: IButton) {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={sx}>
       <CircularProgress color='inherit' />
     </Box>
   );

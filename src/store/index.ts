@@ -1,39 +1,26 @@
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
+import { themes } from '@helpers';
 
 type State = {
-  isAuth: boolean;
-  token: string;
+  theme: string;
 };
 
 type Actions = {
-  setToken: (token: string) => void;
-  logout: () => void;
+  setTheme: (theme: themes) => void;
 };
 
 const initialState: State = {
-  isAuth: true,
-  token: '',
+  theme: themes.green,
 };
 
-// create store
 export const useStore = create<State & Actions>()(
-  devtools(
-    persist(
-      (set) => ({
-        ...initialState,
-
-        setToken: (token: string) => {
-          set(() => ({ token: token, isAuth: Boolean(token) }));
-        },
-
-        logout: () => {
-          set(() => ({ isAuth: false, token: '' }));
-        },
-      }),
-      {
-        name: 'thumbnail-generator-storage',
-      }
-    )
-  )
+  devtools((set) => ({
+    ...initialState,
+    setTheme: (theme) =>
+      set((state) => ({
+        ...state,
+        theme,
+      })),
+  }))
 );

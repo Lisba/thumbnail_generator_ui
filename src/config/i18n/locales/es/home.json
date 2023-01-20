@@ -1,5 +1,7 @@
 {
   "HELP_TEXT": "Arrastra a aquí tu imágen",
   "SEND_IMAGE_BUTTON": "Generar miniatura",
-  "THUMBNAIL_CREATED_SUCCESSFULLY": "Tu miniatura fue creada! 🥳 Aquí tienes la URL para que la uses donde desees!"
+  "THUMBNAIL_CREATED_SUCCESSFULLY": "Tu miniatura fue creada! 🥳 Aquí tienes la URL para que la uses donde desees!",
+  "LOGOUT_BUTTON": "Cerrar Sesión",
+  "CREATE_ANOTHER_THUMBNAIL": "Generar otra miniatura"
 }

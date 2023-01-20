@@ -1,54 +1,49 @@
-import { useState } from 'react';
-import { InputWithIcon, Button } from '@components';
 import { useTranslation } from 'react-i18next';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Button } from '@components';
+import images from '@assets';
+import { StyledForm } from './styles';
+import { useStore } from '@store';
+import { themes } from '@helpers';
 
 function Login(): JSX.Element {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { theme } = useStore((state) => state);
+
+  const { loginWithRedirect } = useAuth0();
   const { t } = useTranslation('login');
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('event: ', event);
-    console.log('email: ', email);
-    console.log('password: ', password);
-  };
-
-  const onChangeHandler = (
-    event: React.FormEvent<HTMLFormElement> & {
-      target: HTMLButtonElement;
-    }
-  ) => {
-    event.preventDefault();
-    const inputs = {
-      email: () => setEmail(event.target?.value),
-      password: () => setPassword(event.target?.value),
-    };
-
-    inputs[event.target?.name]();
+    loginWithRedirect();
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmitHandler}>
-        <InputWithIcon
-          name='email'
-          label={t('EMAIL')}
-          onChange={(event) => onChangeHandler(event)}
-        />
-        <InputWithIcon
-          name='password'
-          label={t('PASSWORD')}
-          onChange={(event) => onChangeHandler(event)}
-        />
+    <StyledForm onSubmit={onSubmitHandler}>
+      <div className='img-container'>
+        <img
+          className={theme === themes.green ? 'logo-green' : 'logo-purple'}
+          src={images.thumbnailLogo}
+        ></img>
+      </div>
+      <div>
+        <h1 className='title'>{t('LOGIN_TITLE')}</h1>
+      </div>
+      <div>
         <Button
+          sx={{
+            color: 'var(--secondary-color)',
+            border: '1px solid var(--button-main-border-color)',
+            '&:hover': {
+              color: 'var(--secondary-color)',
+              border: '1px solid var(--button-main-border-hover-color)',
+            },
+          }}
           type={'submit'}
           variant={'outlined'}
           text={t('LOGIN_BUTTON')}
-          onClick={onSubmitHandler}
         />
-      </form>
-    </div>
+      </div>
+    </StyledForm>
   );
 }
 
