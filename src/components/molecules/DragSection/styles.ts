@@ -2,19 +2,22 @@ import styled from 'styled-components';
 
 const StyleDragSection = styled.div`
   .image-upload-container {
-    border: 4px dashed #d0d7de;
-    position: relative;
     margin-bottom: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;
     color: var(--button-main-border-hover-color);
+    border: 4px dashed #d0d7de;
   }
   .image-upload-container:hover {
     background-color: transparent;
     border: 4px solid #d0d7de;
   }
   .file-upload-input-container {
-    text-align: center;
-    position: absolute;
+    width: 100%;
     height: 100%;
+    position: absolute;
+    text-align: center;
   }
   .file-upload-input {
     width: 100%;

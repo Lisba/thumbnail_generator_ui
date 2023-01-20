@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button } from '@components';
+import { Button } from '@atoms';
 import images from '@assets';
 import { StyledForm } from './styles';
 import { useStore } from '@store';
@@ -23,7 +23,8 @@ function Login(): JSX.Element {
         <img
           className={theme === themes.green ? 'logo-green' : 'logo-purple'}
           src={images.thumbnailLogo}
-        ></img>
+          alt={'thumbnail logo'}
+        />
       </div>
       <div>
         <h1 className='title'>{t('LOGIN_TITLE')}</h1>

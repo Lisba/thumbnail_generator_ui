@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import WebCamera from '../WebCamera';
 import StyleDragSection from './styles';
-import { FILES_SUPORTED } from './contants';
+import { FILES_SUPORTED } from './constants';
 
-function DragSection({ setImageToSend }) {
+function DragSection({ setImageToSend, useCamera }) {
   const [imageSelected, setImageSelected] = useState<string | ArrayBuffer | null>(null);
   const { t } = useTranslation('home');
 
@@ -23,6 +24,7 @@ function DragSection({ setImageToSend }) {
 
   return (
     <StyleDragSection>
+      <WebCamera useCamera={useCamera} setImageSelected={setImageSelected} />
       <div className='image-upload-container'>
         <div className='file-upload-input-container'>
           <input

@@ -6,16 +6,16 @@
     "es2021": true,
     "node": true
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
       "tsx": true
     },
     "ecmaVersion": 13,
-    "sourceType": "module",
-    "parser": "@babel/eslint-parser"
+    "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "require-jsdoc": [
       "off",
@@ -29,11 +29,11 @@
         }
       }
     ],
-    "indent": "off",
+    "indent": ["off"],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "no-unused-vars": "error",
-    "no-invalid-regexp": "error"
+    "no-unused-vars": ["warn"],
+    "no-invalid-regexp": ["error"]
   }
 }

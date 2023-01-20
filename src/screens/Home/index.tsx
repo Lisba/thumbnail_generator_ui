@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button, DragSection, Spinner } from '@components';
-import { uploadImage } from '@services';
 import { useTranslation } from 'react-i18next';
+import { Button, Spinner } from '@atoms';
+import { DragSection } from '@molecules';
+import { uploadImage } from '@services';
 import { StyledForm, StyledPreviwContainer, StyledDiv, StyledDivLogoutButton } from './styles';
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
   const [imageToSend, setImageToSend] = useState<string | ArrayBuffer | null>(null);
   const [loading, setLoading] = useState(false);
   const [imageUploadedUrl, setImageUploadedUrl] = useState('');
+  const [useCamera, setUseCamera] = useState(false);
 
   const onSubmitHandler = async (event) => {
     try {
@@ -61,23 +63,41 @@ function Home() {
             </div>
           </StyledPreviwContainer>
         ) : (
-          <StyledForm onSubmit={(event) => onSubmitHandler(event)}>
-            <DragSection setImageToSend={setImageToSend} />
-            <Button
-              sx={{
-                color: 'var(--secondary-color)',
-                border: '1px solid var(--button-main-border-color)',
-                '&:hover': {
+          <>
+            {!useCamera ? (
+              <Button
+                sx={{
+                  marginBottom: '15%',
                   color: 'var(--secondary-color)',
-                  border: '1px solid var(--button-main-border-hover-color)',
-                },
-              }}
-              type={'submit'}
-              variant={'outlined'}
-              text={t('SEND_IMAGE_BUTTON')}
-              onClick={onSubmitHandler}
-            />
-          </StyledForm>
+                  border: '1px solid var(--button-main-border-color)',
+                  '&:hover': {
+                    color: 'var(--secondary-color)',
+                    border: '1px solid var(--button-main-border-hover-color)',
+                  },
+                }}
+                variant={'outlined'}
+                text={t('USE_CAMERA')}
+                onClick={setUseCamera}
+              />
+            ) : null}
+            <StyledForm onSubmit={(event) => onSubmitHandler(event)}>
+              <DragSection setImageToSend={setImageToSend} useCamera={useCamera} />
+              <Button
+                sx={{
+                  color: 'var(--secondary-color)',
+                  border: '1px solid var(--button-main-border-color)',
+                  '&:hover': {
+                    color: 'var(--secondary-color)',
+                    border: '1px solid var(--button-main-border-hover-color)',
+                  },
+                }}
+                type={'submit'}
+                variant={'outlined'}
+                text={t('SEND_IMAGE_BUTTON')}
+                onClick={onSubmitHandler}
+              />
+            </StyledForm>
+          </>
         )}
       </StyledDiv>
     </>

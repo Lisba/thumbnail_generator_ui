@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, Login, NotFound } from '@screens';
-import { ProtectedRoute } from '@components';
+import { ProtectedRoute } from '@atoms';
 
 function App() {
   return (
