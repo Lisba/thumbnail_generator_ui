@@ -5,4 +5,8 @@
 2. Turn on docker engine and run `docker-compose up --build` command.
 3. Go to `http://localhost:5173/` into your browser.
 
+#### Login credentials
+- User: lisba7474@gmail.com
+- Pass: Test111.
+
 > :warning: For security reasons the env variables are encrypted, make sure to decrypt them before run the app.
