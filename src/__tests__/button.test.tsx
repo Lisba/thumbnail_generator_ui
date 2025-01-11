@@ -24,15 +24,15 @@ describe('<Button />', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  test('Verify the text rendered into the button', async () => {
-    const { getByText } = await render(<Button text={'Next'} />);
+  test('Verify the text rendered into the button', () => {
+    const { getByText } = render(<Button text={'Next'} />);
     const button = getByText('Next');
 
     expect(button).toHaveTextContent('Next');
   });
 
-  test('Verify button disabled', async () => {
-    const { getByText } = await render(<Button text={'Next'} disabled />);
+  test('Verify button disabled', () => {
+    const { getByText } = render(<Button text={'Next'} disabled />);
     const button = getByText('Next');
 
     expect(button).toBeDisabled();
