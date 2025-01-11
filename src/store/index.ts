@@ -3,7 +3,7 @@ import { devtools } from 'zustand/middleware';
 import { themes } from '@helpers';
 
 type State = {
-  theme: string;
+  theme: themes;
 };
 
 type Actions = {

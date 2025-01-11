@@ -1,6 +1,12 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "env": {
     "browser": true,
     "es2021": true,
@@ -12,28 +18,15 @@
       "jsx": true,
       "tsx": true
     },
-    "ecmaVersion": 13,
+    "ecmaVersion": 15,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
-    "require-jsdoc": [
-      "off",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true,
-          "ArrowFunctionExpression": true,
-          "FunctionExpression": true
-        }
-      }
-    ],
-    "indent": ["off"],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "no-unused-vars": ["warn"],
-    "no-invalid-regexp": ["error"]
+    "linebreak-style": ["error", "unix"]
   }
 }
