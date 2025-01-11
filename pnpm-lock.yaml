@@ -4320,7 +4320,7 @@ snapshots:
 
   '@mui/private-theming@5.11.2(@types/react@18.0.26)(react@18.2.0)':
     dependencies:
-      '@babel/runtime': 7.20.7
+      '@babel/runtime': 7.26.0
       '@mui/utils': 5.11.2(react@18.2.0)
       prop-types: 15.8.1
       react: 18.2.0
